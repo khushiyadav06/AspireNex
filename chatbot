@@ -1,23 +1,21 @@
-greetings = ["hi", "hello", "hey"]
-questions = ["how are you", "what's up?"]
-responses = ["I'm doing well, thanks for asking!", "Just hanging out, waiting to chat!"]
-farewells = ["bye", "goodbye", "see you later"]
-
-
-def respond(message):
-  message = message.lower()
-  if message in greetings:
-    return "Hey there!"
-  elif message in questions:
-    return responses[0]  # Choose a random response from responses list
-  elif message in farewells:
-    return "See you later!"
-  else:
-    return "I don't understand, but it sounds interesting!"
-
-# Main loop
-while True:
-  user_input = input("You: ")
-  if user_input.lower() == "quit":
-    break
-  print("Chatbot:", respond(user_input))
+import java.util.Scanner;  
+public class RuleBasedChatbot {  
+    public static void main(String[] args) {  
+        Scanner scanner = new Scanner(System.in);  
+        System.out.println("Chatbot: Hello! How can I assist you today?");         
+        while (true) {  
+            String userInput = scanner.nextLine();  
+            if (userInput.equalsIgnoreCase("hello")) {  
+                System.out.println("Chatbot: Hi there!");  
+            } else if (userInput.equalsIgnoreCase("how are you?")) {  
+                System.out.println("Chatbot: I'm good, thank you. How about you?");  
+            } else if (userInput.equalsIgnoreCase("bye")) {  
+                System.out.println("Chatbot: Goodbye! Have a great day!");  
+                break;  
+            } else {  
+                System.out.println("Chatbot: Sorry, I didn't understand that.");  
+            }  
+        }  
+        scanner.close();  
+    }  
+}  
